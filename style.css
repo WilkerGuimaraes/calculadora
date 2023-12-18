@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --primary-color: #ccc;
+  --black-color-1: #111;
+  --black-color-2: #333;
+  --orange: #ff6500;
+}
+
+body {
+  background: linear-gradient(to right, #001c3d, #255aff);
+  font-weight: 500;
+}
+
+.grid-container {
+  display: grid;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  gap: 3px;
+}
+
+.grid-container > button {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grid-container > button:hover {
+  background: var(--white);
+  color: var(--black-color-1);
+}
+
+.grid-container > button:active {
+  background: var(--black-color-2);
+  color: var(--primary-color);
+}
+
+.grid-container .operator {
+  background: var(--black-color-1);
+  color: var(--white);
+}
+
+.grid-container .span-2 {
+  grid-column: span 2;
+}
+
+.grid-container .output {
+  grid-column: 1 / -1;
+  background: var(--black-color-2);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 10px;
+}
+
+.output .previous-operand {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.output .current-operand {
+  font-size: 2.5rem;
+  color: var(--white);
+}
